@@ -4,11 +4,15 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
+// import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
+
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom"
+
 
 
 function App() {
@@ -49,7 +53,11 @@ function App() {
   <> 
    {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
 {/* <Navbar/> */}
-<Router>
+
+
+<HashRouter>
+ 
+{/* <Router> */}
 <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
 <Alert alert= {alert}/>
 
@@ -59,12 +67,14 @@ function App() {
   /users/home-->--> Component 2 */}
     <Route exact path="/about" element={<About />}></Route>
     <Route exact path="/" element={<Textform showAlert={showAlert}heading="Enter the text to analyze below" mode={mode}/>}>
+
 </Route>
 
   </Routes>
   </div>
-  </Router>
-
+  {/* </Router> */}
+  </HashRouter>
+ {/* </BrowserRouter> */}
 
 
 
